@@ -1,0 +1,137 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-06T12:15:00Z"
+ },
+ "lists": "css",
+ "title": "Intelligent Agents: From Decision Theory to Modern Agentic AI (Gisma)",
+ "cover": "cover",
+ "order": [
+  "cover",
+  "agenda",
+  "example",
+  "thesis",
+  "p1",
+  "agentdef",
+  "agent",
+  "chatbot",
+  "aitypes",
+  "archs1",
+  "archs2",
+  "ladder",
+  "evolution",
+  "hist1",
+  "hist2",
+  "pomdp",
+  "p2",
+  "beliefs",
+  "utilitydef",
+  "utility",
+  "constraints",
+  "voidef",
+  "voi",
+  "voiask",
+  "explore",
+  "regret",
+  "fairness",
+  "testroll",
+  "testroll2",
+  "ebayes",
+  "criteria",
+  "p3",
+  "banditdef",
+  "strategies",
+  "bandits",
+  "contextual",
+  "mdp",
+  "mdpdef",
+  "returnv",
+  "planning",
+  "active",
+  "p4",
+  "rldef",
+  "rlfamilies",
+  "rewarddesign",
+  "hacking",
+  "rlhf",
+  "rlhf2",
+  "continual",
+  "memory",
+  "halluc",
+  "p5",
+  "llmloop",
+  "tools",
+  "architecture",
+  "multimodal",
+  "multiagent",
+  "mcpa2a",
+  "reliability",
+  "p6",
+  "whenagent",
+  "supervisor",
+  "judge",
+  "guardrails",
+  "escalate",
+  "p7",
+  "causal",
+  "evaluate",
+  "rct",
+  "risks",
+  "casestudy",
+  "p8",
+  "future",
+  "longhorizon",
+  "beyond",
+  "question"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Opening: agenda, running example, central argument",
+   "start": "cover"
+  },
+  "s2": {
+   "description": "Part 1 · What is an agent?",
+   "start": "p1"
+  },
+  "s3": {
+   "description": "Part 2 · Deciding under uncertainty",
+   "start": "p2"
+  },
+  "s4": {
+   "description": "Part 3 · Learning to decide",
+   "start": "p3"
+  },
+  "s5": {
+   "description": "Part 4 · Learning from feedback",
+   "start": "p4"
+  },
+  "s6": {
+   "description": "Part 5 · Modern agentic architectures",
+   "start": "p5"
+  },
+  "s7": {
+   "description": "Part 6 · Building reliable agents (then live n8n + Ollama)",
+   "start": "p6"
+  },
+  "s8": {
+   "description": "Part 7 · Evaluation and impact",
+   "start": "p7"
+  },
+  "s9": {
+   "description": "Part 8 · Future of AI",
+   "start": "p8"
+  }
+ },
+ "faces": {
+  "lato": {
+   "family": "Lato",
+   "href": "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+  },
+  "plexmono": {
+   "family": "IBM Plex Mono",
+   "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"
+  }
+ },
+ "designSystems": []
+}

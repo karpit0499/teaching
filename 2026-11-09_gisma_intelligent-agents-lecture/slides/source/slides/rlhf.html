@@ -1,0 +1,30 @@
+<section id="rlhf" data-transition="push" style="background:#FFFFFF;color:#0B0B0B;font-family:'Lato', Arial, sans-serif;padding:128px;display:flex;flex-direction:column">
+<div style="position:absolute;left:0px;top:0px;width:384px;height:184px;background:#FFFFFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3)"></div>
+<img src="/_blob/88a5e0c4a0fc6811bad27cc1494a8a44" alt="Gisma University of Applied Sciences logo" style="position:absolute;left:32px;top:30px;width:310px;height:125px;object-fit:contain">
+<div style="position:absolute;left:396px;top:0px;width:1144px;height:184px;display:flex;align-items:center;justify-content:center;background:#00CCFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3);padding:0px 40px"><h2 style="font-family:'Lato', Arial, sans-serif;font-size:68px;font-weight:900;line-height:1.05;text-align:center;color:#0B0B0B">How Assistants Learn What We Prefer</h2></div>
+<div style="position:absolute;left:1552px;top:0px;width:368px;height:184px;display:flex;flex-direction:column;justify-content:space-between;background:#00CCFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3);padding:20px 28px"><p style="font-size:24px;line-height:1.25;color:#0B0B0B">[Murphy 2023, §22.4.1, pp. 815–816]</p><p style="font-size:32px;text-align:right;color:#0B0B0B">47</p></div>
+<p style="position:absolute;left:96px;top:228px;width:1728px;font-size:34px;color:#0B0B0B"><b>RLHF</b>: reinforcement learning from human feedback, in three steps.</p>
+<div data-build-in="pop 1" style="position:absolute;left:96px;top:320px;width:500px;height:380px;display:flex;flex-direction:column;gap:18px;background:#F2FBFF;border-top:10px solid #00CCFF;padding:40px 40px">
+<x-icon name="Users" style="color:#021D3B;width:64px;height:64px"></x-icon>
+<p style="font-family:'Lato', Arial, sans-serif;font-size:42px;font-weight:900;color:#0B0B0B">1 · Humans rank</p>
+<p style="font-size:30px;line-height:1.4;color:#333F4B">Raters compare two itineraries and pick the better one.</p>
+</div>
+<x-shape kind="arrow-right" data-build-in="fade 2" style="position:absolute;left:616px;top:490px;width:72px;height:40px;background:#021D3B"></x-shape>
+<div data-build-in="pop 3" style="position:absolute;left:708px;top:320px;width:500px;height:380px;display:flex;flex-direction:column;gap:18px;background:#F2FBFF;border-top:10px solid #00CCFF;padding:40px 40px">
+<x-icon name="Chart" style="color:#021D3B;width:64px;height:64px"></x-icon>
+<p style="font-family:'Lato', Arial, sans-serif;font-size:42px;font-weight:900;color:#0B0B0B">2 · Learn a scorer</p>
+<p style="font-size:30px;line-height:1.4;color:#333F4B">A reward model learns to predict which answer people prefer.</p>
+</div>
+<x-shape kind="arrow-right" data-build-in="fade 4" style="position:absolute;left:1228px;top:490px;width:72px;height:40px;background:#021D3B"></x-shape>
+<div data-build-in="pop 5" style="position:absolute;left:1320px;top:320px;width:504px;height:380px;display:flex;flex-direction:column;gap:18px;background:#021D3B;border-top:10px solid #CAD928;padding:40px 40px">
+<x-icon name="Settings" style="color:#CAD928;width:64px;height:64px"></x-icon>
+<p style="font-family:'Lato', Arial, sans-serif;font-size:42px;font-weight:900;color:#FFFFFF">3 · Tune the model</p>
+<p style="font-size:30px;line-height:1.4;color:#C9D8EA">RL fine-tuning makes the LLM score highly with that scorer.</p>
+</div>
+<div data-build-in="rise 6" style="position:absolute;left:210px;top:760px;width:1500px;display:flex;flex-direction:row;gap:24px;align-items:center;background:#CAD928;padding:28px 40px;transform:rotate(-1deg);box-shadow:4px 6px 18px rgba(0,0,0,0.18)">
+<x-icon name="Warning" style="color:#021D3B;width:56px;height:56px"></x-icon>
+<p style="font-size:32px;line-height:1.35;color:#021D3B"><b>Can be hacked too:</b> models learn to be verbose, agreeable or overconfident because raters liked it.</p>
+</div>
+<p data-build-in="fade 7" style="position:absolute;left:96px;top:940px;width:1728px;text-align:center;font-size:28px;color:#4A5560">This is how the model was <b style="color:#0B0B0B">trained</b>, not what happens when the agent <b style="color:#0B0B0B">runs</b>.</p>
+<aside>Most assistant models are aligned this way. People compare more reliably than they score, so the reward model learns from comparisons: preference learning. Then the language model is fine-tuned with RL, for example PPO, to score well while staying close to its original behaviour. PML2 §22.4.1, pp. 815–816; §35.3.4, pp. 1148–1149.</aside>
+</section>
