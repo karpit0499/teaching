@@ -1,0 +1,91 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-06T12:15:00Z"
+ },
+ "lists": "css",
+ "title": "Intelligent Agents · Session 1: The Theory (Gisma)",
+ "cover": "cover1",
+ "order": [
+  "cover1",
+  "hook1",
+  "story1",
+  "hook2",
+  "story2",
+  "collage",
+  "hook4",
+  "story4",
+  "hook3",
+  "story3",
+  "bridge",
+  "agenda1",
+  "thesis",
+  "d1",
+  "agentdef",
+  "agent",
+  "aitypes",
+  "ladder",
+  "evolution",
+  "pomdp",
+  "d2",
+  "beliefs",
+  "utility",
+  "constraints",
+  "voi",
+  "d3",
+  "explore",
+  "banditdef",
+  "mdp",
+  "hacking",
+  "memory",
+  "d4",
+  "llmloop",
+  "architecture",
+  "task",
+  "setup1",
+  "setup2",
+  "question1"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Opening: four real stories, the question they raise, and today’s plan",
+   "start": "cover1"
+  },
+  "s2": {
+   "description": "Part 1 · What is an agent?",
+   "start": "d1"
+  },
+  "s3": {
+   "description": "Part 2 · Deciding under uncertainty",
+   "start": "d2"
+  },
+  "s4": {
+   "description": "Part 3 · Learning to decide",
+   "start": "d3"
+  },
+  "s5": {
+   "description": "Part 4 · Modern agentic architectures",
+   "start": "d4"
+  },
+  "s6": {
+   "description": "Take-home task and setup: n8n Community Edition + Ollama",
+   "start": "task"
+  }
+ },
+ "faces": {
+  "lato": {
+   "family": "Lato",
+   "href": "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+  },
+  "plexmono": {
+   "family": "IBM Plex Mono",
+   "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"
+  },
+  "libre-baskerville": {
+   "family": "Libre Baskerville",
+   "href": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+  }
+ },
+ "designSystems": []
+}

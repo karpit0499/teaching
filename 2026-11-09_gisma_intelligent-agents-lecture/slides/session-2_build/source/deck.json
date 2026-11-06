@@ -1,0 +1,63 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-06T17:40:00Z"
+ },
+ "lists": "css",
+ "title": "Intelligent Agents · Session 2: Build It (Gisma)",
+ "cover": "cover2",
+ "order": [
+  "cover2",
+  "recap",
+  "agenda2",
+  "e1",
+  "whenagent",
+  "supervisor",
+  "judge",
+  "guardrails",
+  "e2",
+  "buildmap",
+  "step1",
+  "step2",
+  "step3",
+  "step4",
+  "step5",
+  "step6",
+  "step7",
+  "e3",
+  "tests",
+  "evaluate",
+  "future",
+  "question"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Opening: recap of Session 1 and today’s plan",
+   "start": "cover2"
+  },
+  "s2": {
+   "description": "Part 1 · Four design rules for reliable agents",
+   "start": "e1"
+  },
+  "s3": {
+   "description": "Part 2 · Build the trip planner in n8n + Ollama, step by step",
+   "start": "e2"
+  },
+  "s4": {
+   "description": "Part 3 · Testing, evidence and the future of agents",
+   "start": "e3"
+  }
+ },
+ "faces": {
+  "lato": {
+   "family": "Lato",
+   "href": "https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+  },
+  "plexmono": {
+   "family": "IBM Plex Mono",
+   "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap"
+  }
+ },
+ "designSystems": []
+}

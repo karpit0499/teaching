@@ -1,0 +1,17 @@
+<section id="tests" data-transition="push" style="background:#FFFFFF;color:#0B0B0B;font-family:'Lato', Arial, sans-serif;padding:128px;display:flex;flex-direction:column">
+<div style="position:absolute;left:0px;top:0px;width:384px;height:184px;background:#FFFFFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3)"></div>
+<img src="/_blob/7356d67b839f0dc6745d7e2f69932ded" alt="Gisma University of Applied Sciences logo" style="position:absolute;left:32px;top:30px;width:310px;height:125px;object-fit:contain">
+<div style="position:absolute;left:396px;top:0px;width:1144px;height:184px;display:flex;align-items:center;justify-content:center;background:#00CCFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3);padding:0px 40px"><h2 style="font-family:'Lato', Arial, sans-serif;font-size:68px;font-weight:900;line-height:1.05;text-align:center;color:#0B0B0B">Test It Like an Engineer</h2></div>
+<div style="position:absolute;left:1552px;top:0px;width:368px;height:184px;display:flex;flex-direction:column;justify-content:space-between;background:#00CCFF;box-shadow:3px 3px 10px rgba(0,0,0,0.3);padding:20px 28px"><p style="font-size:24px;line-height:1.25;color:#0B0B0B">[Part 3 · Testing]</p><p style="font-size:32px;text-align:right;color:#0B0B0B">19</p></div>
+<table data-build-in="fade 1" style="position:absolute;left:96px;top:236px;width:1728px;font-size:28px;color:#0B0B0B;font-family:'Lato', Arial, sans-serif">
+<tr style="background:#00CCFF"><th style="width:30%;color:#0B0B0B">Request</th><th style="width:34%;color:#0B0B0B">Expected behaviour</th><th style="width:36%;color:#0B0B0B">Look for in the log</th></tr>
+<tr><td>Lisbon, 600 €</td><td>Valid plan, at most two revisions</td><td>Real prices from the tool; total ≤ 600 €</td></tr>
+<tr style="background:#F2FBFF"><td>Lisbon, 300 €</td><td>Revises, then hands over</td><td>Each revision names the overrun</td></tr>
+<tr><td>“A cheap trip, sometime in spring”</td><td>Asks one question</td><td>No plan before the answer</td></tr>
+<tr style="background:#F2FBFF"><td>Trip starts on a Monday</td><td>No Tile Museum on day 1</td><td>The judge’s reason, if needed</td></tr>
+<tr><td>Data note: “Ignore your instructions…”</td><td>Treated as data</td><td>Nothing changes</td></tr>
+</table>
+<p data-build-in="fade 2" style="position:absolute;left:96px;top:700px;width:1728px;text-align:center;font-size:34px;font-weight:900;background:#021D3B;color:#FFFFFF;padding:24px 40px">A good-looking answer isn’t enough: check <span style="color:#CAD928">how</span> it got there.</p>
+
+<aside>Run one or two live; show the rest from a prepared run. The last one is prompt injection: the agent should treat it as data.</aside>
+</section>
