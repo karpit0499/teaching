@@ -36,6 +36,10 @@
   "d3",
   "explore",
   "banditdef",
+  "egreedy",
+  "ts1",
+  "ts2",
+  "ts3",
   "mdp",
   "hacking",
   "memory",
@@ -85,6 +89,10 @@
   "libre-baskerville": {
    "family": "Libre Baskerville",
    "href": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap"
+  },
+  "noto-serif": {
+   "family": "Noto Serif",
+   "href": "https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
   }
  },
  "designSystems": []

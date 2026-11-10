@@ -10,14 +10,14 @@
 
 An LLM plus tools plus memory, running in a loop, is how agents are *built*. It is not what makes them *good*. The loop is the body; the decisions made inside it are the intelligence.
 
-## Session 1: The Theory (38 slides)
+## Session 1: The Theory (42 slides)
 
 | Time | Part | Topics | PML2 |
 |---|---|---|---|
 | 0–7 min | Opening | Four real stories as news clippings: the US–China AI near-miss (Sep 2026), Petrov (1983), OpenAI test agents hacking Hugging Face (Jul 2026), the AI disproof claim for the Exponential Time Hypothesis (Oct 2026). One question: who checks the machine? | |
 | 7–11 min | 1. What is an agent? | Definition, agent cycle, three kinds of AI, classical designs, history, POMDP | §34.5.2 |
 | 11–19 min | 2. Deciding under uncertainty | Beliefs, expected utility, hard constraints, value of information | §3.2, §34.1–34.2 |
-| 19–25 min | 3. Learning to decide | Explore vs exploit, bandits, MDPs, reward hacking (with the Hugging Face case), memory vs learning | §34.4–34.6, §19.7 |
+| 19–25 min | 3. Learning to decide | Explore vs exploit, bandits, ε-greedy, Thompson sampling (worked example with three slot machines; Netflix artwork), MDPs, reward hacking (with the Hugging Face case), memory vs learning | §34.4–34.6, §19.7 |
 | 25–28 min | 4. Modern architectures | The LLM as policy, tools, memory, skills, MCP and A2A | |
 | 28–30 min | Take-home task | Design a budget-aware trip-planning agent; step-by-step setup for n8n Community Edition and Ollama | |
 
@@ -43,7 +43,7 @@ Running request: *3 days in Lisbon, 600 € budget, nothing before 10:00.*
 │   │   ├── Session1_Intelligent_Agents_Theory.pptx   ← present this (animations and transitions included)
 │   │   ├── Session1_Intelligent_Agents_Theory.pdf    ← read-only copy
 │   │   ├── speaker-notes.md
-│   │   └── source/                                   ← deck.json + one HTML file per slide
+│   │   └── source/                                   ← deck.json, one HTML file per slide, Thompson sampling script
 │   └── session-2_build/
 │       ├── Session2_Build_It_n8n_Ollama.pptx
 │       ├── Session2_Build_It_n8n_Ollama.pdf
@@ -73,4 +73,6 @@ All photos from Unsplash: Tono Graphy, Cindy F (Session 1); Annamaria Kupo, Timu
 
 - Page and section numbers refer to the 2023 print edition of PML2.
 - Numbers marked "illustrative" in the slides (traces, the 300 € run) are teaching examples, not data.
+- The Thompson sampling draws on Session 1 slides 30–32 come from a seeded random generator; `source/thompson_sampling_example.py` reproduces them.
+- Netflix: the artwork bandit and its exploration strategies (ε-greedy, Thompson sampling, UCB) come from Justin Basilico's QCon SF 2018 talk "Artwork Personalization at Netflix". The slides do not claim which algorithm Netflix runs in production.
 - The US–China story rests on CNN's anonymous sources; the ETH result was a claim under expert review, not a certified result, as of early November 2026.

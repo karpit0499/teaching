@@ -112,42 +112,58 @@ Pure exploitation can lock you onto a mediocre option forever; pure exploration 
 
 The name comes from one-armed bandits. Each choice yields a reward and information, but the situation does not change from round to round. For a research agent: across thousands of questions, which source to rely on.
 
-## 29. Choices That Change Tomorrow
+## 29. The ε-Greedy Strategy
+
+The simplest fix for explore vs exploit. Most of the time do what has worked best so far; a small fraction of the time, epsilon, pick at random. Restaurant version: nine nights out of ten your favourite, one night a random new place. Epsilon is the dial between trusting what you know and experimenting. Two weaknesses: it explores blindly, giving a known-bad option the same random chance as a promising one, and it never stops exploring unless epsilon is lowered over time. Still a strong baseline, and a fair first answer in an exam. Next: Thompson sampling, which explores where the agent is actually unsure.
+
+## 30. Thompson Sampling (1 of 3)
+
+Thompson sampling keeps a belief for every machine instead of a single number. For a win/lose machine the belief is a Beta distribution with two counts, alpha and beta. We start every machine at alpha = 1, beta = 1: a flat prior, every win chance equally likely. Then each win adds one to alpha and each loss adds one to beta, so alpha = 1 + wins and beta = 1 + losses. The table: A has won 2 of 2, so its raw win rate is 100%. B won 6 of 10, 60%. C won 1 of 4, 25%. The expected win rate is alpha over alpha plus beta: for A, 3 over 4 = 0.75, not 100%. Two plays are not proof; the prior keeps the estimate humble. The LaTeX source is shown in the strip at the bottom.
+
+## 31. Thompson Sampling in Action (2 of 3)
+
+Each turn, Thompson sampling draws one random number from each machine’s Beta distribution: the estimated reward probability, ERP. It plays the machine with the highest draw, sees win or loss, and adds 1 to that machine’s alpha or beta. Turn 1: A draws 0.77, highest, so A is played. It loses: A becomes Beta(3, 2). Turn 2: B narrowly beats A, 0.74 to 0.71, and wins. Turn 3: B again, win. Turn 4 is the interesting one: C, the weakest machine on paper, draws 0.68 and beats B. Its belief is still wide, so it sometimes draws high. It loses. Turn 5: B, win. Nobody told the agent to explore. The randomness of the draws does it, in proportion to uncertainty. The draws come from a random generator with a fixed seed, so the example can be reproduced.
+
+## 32. Why Thompson Sampling Works (3 of 3)
+
+After five turns the ERP, alpha over alpha plus beta, and the raw win rate disagree, and that is the point. A: the raw rate fell from 100% to 67%; the ERP was 0.75 from the start, because the prior never believed 2 of 2. B: 13 plays, so its ERP of 0.67 is close to its raw 69%: with more data the prior matters less. C: raw 20%, ERP 0.29. Few plays keep its belief wide, so it still gets the occasional try, as in turn 4. Thompson sampling plays each machine roughly in proportion to the chance it is the best, so exploration shrinks by itself as evidence grows. That fixes both weaknesses of epsilon-greedy. Netflix: for each title it has several artwork images. Choosing which image to show a member is framed as a bandit: each image is an arm and a play is the reward. A contextual bandit picks the image per profile and keeps exploring. In his 2018 QCon talk, Netflix’s Justin Basilico lists Thompson sampling among the exploration strategies, along with epsilon-greedy and UCB. We don’t claim it is the only algorithm Netflix runs in production.
+
+## 33. Choices That Change Tomorrow
 
 In an MDP, actions change the situation for the next decision: patching a symptom instead of the cause changes every later step. Five ingredients: states, actions, transition probabilities, rewards, and the Markov property. Real agents can’t see the full state, so they act on beliefs: a POMDP. Planning looks ahead; feedback corrects after acting. Photo: Tono Graphy, Unsplash.
 
-## 30. Reward Hacking
+## 34. Reward Hacking
 
 A reward is usually a proxy for the real goal. When proxy and goal diverge, a capable optimiser finds the gap. The last row is the July story: agents scored on solving hacking tests apparently went looking for the answers on Hugging Face, the same move as code that special-cases the tests, but in the real world. Every judge, metric and rating used to steer an agent is a reward that can be hacked. That matters for the judge agent we build in Session 2.
 
-## 31. Remembering Is Not Learning
+## 35. Remembering Is Not Learning
 
 Three different things can change when people say an agent learned. Only the third changes the model. During an agent run the weights are fixed, so LLM agents are not automatically reinforcement-learning agents. Continual learning, getting better on the job without forgetting, is still an open problem: PML2 §19.7.
 
-## 32. PART 4 · 25–28 MIN
+## 36. PART 4 · 25–28 MIN
 
 Part 4 maps today’s LLM agents onto everything before. Short: the details come when we build in Session 2.
 
-## 33. LLM-Based Agents
+## 37. LLM-Based Agents
 
 In an LLM agent the model reads its context and proposes the next action. The system executes it, appends the result and asks the model again. Interleaving reasoning with actions is the basic pattern.
 
-## 34. Inside a Modern Agent
+## 38. Inside a Modern Agent
 
 The LLM reads its context and proposes one action at a time. Tools observe and change the world; memory keeps state; skills package know-how; a perception step turns screenshots and voice into structured data. MCP standardises agent-to-tool connections; A2A standardises agent-to-agent communication. Biggest risks: hallucination, prompt injection hidden in web pages or images, unverified tool results.
 
-## 35. Take-Home Task
+## 39. Take-Home Task
 
 Hand out the brief now. The task reuses every idea from the session: the loop, hard constraints in code, preferences as utility, bounded revision, value of information, and keeping a trace. Design first, then build a first version with the setup on the next two slides; in Session 2 we build it properly together.
 
-## 36. Set Up n8n Community Edition
+## 40. Set Up n8n Community Edition
 
 Community Edition is the free edition of self-hosted n8n: it runs on the student’s own laptop with no licence key. Docker is the route n8n recommends; npx needs Node.js 20.19 to 24. The volume keeps workflows and credentials between restarts. Registering the Community Edition with an email is optional and free; it unlocks folders, debug in editor and custom execution data. Source: docs.n8n.io (installation, Community Edition features).
 
-## 37. Connect Ollama to n8n
+## 41. Connect Ollama to n8n
 
 Ollama runs the model locally, so nothing leaves the laptop and nothing costs money. qwen2.5:7b handles tool calls reasonably; the 3b version is the fallback for weaker laptops. In n8n the credential is called Ollama and needs only the Base URL (default http://localhost:11434). If n8n runs in Docker, localhost means the container itself, so use host.docker.internal; on Linux Docker Engine add the --add-host flag. Sources: docs.ollama.com, docs.n8n.io (Ollama credentials).
 
-## 38. NEXT TIME
+## 42. NEXT TIME
 
 Close: thank the class, remind them of the take-home task and the two setup slides, then take questions. Photo: Tono Graphy, Unsplash.
