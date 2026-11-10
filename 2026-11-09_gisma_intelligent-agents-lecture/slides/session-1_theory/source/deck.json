@@ -92,7 +92,7 @@
   },
   "noto-serif": {
    "family": "Noto Serif",
-   "href": "https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap"
+   "href": "https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
   }
  },
  "designSystems": []
